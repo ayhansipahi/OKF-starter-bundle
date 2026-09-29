@@ -2,22 +2,19 @@
 okf_version: "0.2"
 ---
 
-# Terms
-
-* [Active user](terms/active-user.md) - One definition of "active user", shared by product, data and engineering.
-
 # Systems
 
-* [User events](systems/user-events.md) - The user-event stream: schema, producers, consumers.
+* [User service](systems/user-service.md) - Owns user profile data; source of the user CDC stream.
+* [Analytics segments](systems/analytics-segments.md) - Segmentation built from the user CDC stream.
 
 # Decisions
 
-* [Keep session_source in user events](decisions/keep-session-source-field.md) - Unused in this repo, consumed by the Data Science churn model.
+* [Stop collecting gender](decisions/stop-collecting-gender.md) - Collection stopped; column stays until segments migrate.
 
 # Playbooks
 
-* [Change the event schema](playbooks/change-event-schema.md) - Steps for adding, renaming or removing an event field.
+* [Remove a field from a service](playbooks/remove-a-field.md) - Check consumers, stop writing, migrate, then remove.
 
 # Teams
 
-* [Data Science](teams/data-science.md) - Owns the churn model and the feature pipeline.
+* [Analytics](teams/analytics.md) - Owns segments and the analytics side of the CDC stream.
